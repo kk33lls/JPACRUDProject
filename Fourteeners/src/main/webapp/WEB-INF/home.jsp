@@ -27,9 +27,30 @@
 	<div>
 		<ol>
 			<c:forEach var="mountain" items="${list}">
-				<li><a href="getMountain.do?mtId=${mountain.id}"> ${mountain.name}</a></li>
+				<li><a href="getMountain.do?mtId=${mountain.id}">
+						${mountain.name}</a></li>
 			</c:forEach>
 		</ol>
+	</div>
+	<div>
+		<h4>Add another mountain to the database</h4>
+		<form action="createMt.do" method="POST">
+
+			<p>Name:
+			<input type="text" name="name" /></p>
+			<p>Elevation:
+			<input type="text" name="elevation"/></p>
+			<p>Elevation Gain:
+			<input type="text" name="elevationGain"/></p>
+			<p>Distance:
+			<input type="text" name="distance"/></p>
+			<p>Difficulty Ranking:
+			<input type="text" name="ranking"/></p>
+			<p>Estimated Time Duration:
+			<input type="text" name="duration"/></p>
+			
+			<input type="submit" value="Submit"></input>
+		</form>
 	</div>
 
 

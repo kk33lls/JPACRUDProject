@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.fourteeners.data.FourteenerDAO;
@@ -29,23 +30,25 @@ public class FourteenerController {
 		return "show";
 	}
 	@GetMapping("deleteMt.do")
-	public String deleteMt(@RequestParam("mtId") int mtId, Model model) {
-		Fourteener delete = new Fourteener();
-		delete.setId(mtId);
-		dao.delete(delete);
+	public String deleteMt(Fourteener deleteMt, Model model) {
+		dao.delete(deleteMt);
 		return "home";
 	}
-	@GetMapping("createMt.do")
-	public String createMt(@RequestParam("mtId") int mtId, Model model) {
-		Fourteener add = new Fourteener();
-		add.setId(mtId);
-		dao.create(add);
-		return "home";
+	@PostMapping("createMt.do")
+	public String createMt(Fourteener newMt, Model model) {
+		dao.create(newMt);
+		return "addedResult";
 	}
-	@GetMapping("updateMt.do")
+	@GetMapping("goToMtUpdate.do")
 	public String updateMt(@RequestParam("mtId") int mtId, Model model) {
-		Fourteener update = new Fourteener();
-		dao.update(mtId, update);
-		return "home";
+		Fourteener found = dao.findById(mtId);
+		model.addAttribute("mountain", found);
+		return "update";
+	}
+	@PostMapping("updateMt.do")
+	public String updatedMt(int mtId, Fourteener updatedMt, Model model) {
+		dao.update(mtId, updatedMt);
+		return "addedResult";
+		
 	}
 }

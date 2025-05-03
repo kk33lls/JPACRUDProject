@@ -28,12 +28,16 @@
 				<br>
 				<p>Do you wish to remove this mountain from the database?</p>
 				<form action="deleteMt.do" method="GET">
-					<input type="hidden" name="mtId" value="${mountain.id}"> <input
-						type="submit" value="Yes" name="Yes"></input> <input type="submit"
-						value="No" name="No"></input>
+					<input type="hidden" name="mtId" value="${mountain.id}"> 
+				    <input type="submit" name="mtId" value="Delete">
+				 </form>
+				<br>
+				<br>
+				<p>Would you like to update the information?</p>
+				<form action="goToMtUpdate.do" method="GET">
+					<input type="hidden" name="mtId" value="${mountain.id}"> 
+					<input type="submit" value="Update" name="Update"></input>
 				</form>
-				<br>
-				<br>
 			</c:when>
 			<c:otherwise>
 				<h2>Error: User input not found in the database</h2>

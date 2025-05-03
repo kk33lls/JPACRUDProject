@@ -14,6 +14,7 @@
 <body>
 <h3>Update Information</h3>
 <form action="updateMt.do" method="POST">
+	<input type="hidden" name="id" value="${mountain.id }"/>
 	<p>Name
 	<input type="text" name="name" value="${mountain.name}" /></p>
 	<p>Elevation (in feet)
@@ -21,7 +22,7 @@
 	<p>Elevation Gain (in feet)
 	<input type="text" name="elevationGain" value="${mountain.elevationGain}"/></p>
 	<p>Distance (in feet)
-	<input type="text" name="distance" value="${mountain.distance}" placeholder=></p>
+	<input type="text" name="distance" value="${mountain.distance}" /></p>
 	<p>Difficulty Ranking
 	<input type="text" name="ranking" value="${mountain.ranking}"/></p>
 	<p>Estimated Duration (in hours)

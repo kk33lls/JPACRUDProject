@@ -28,7 +28,7 @@
 				<br>
 				<p>Do you wish to remove this mountain from the database?</p>
 				<form action="deleteMt.do" method="GET">
-					<input type="hidden" name="mtId" value="${mountain.id}"> 
+					<input type="hidden" name="id" value="${mountain.id}"> 
 				    <input type="submit" name="mtId" value="Delete">
 				 </form>
 				<br>

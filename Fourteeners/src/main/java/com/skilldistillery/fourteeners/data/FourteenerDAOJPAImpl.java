@@ -46,7 +46,7 @@ public class FourteenerDAOJPAImpl implements FourteenerDAO {
 
 	@Override
 	public void delete(Fourteener mtToDelete) {
-		Fourteener mountain = em.find(Fourteener.class, mtToDelete);
+		Fourteener mountain = em.find(Fourteener.class, mtToDelete.getId());
 		em.remove(mountain);
 	}
 

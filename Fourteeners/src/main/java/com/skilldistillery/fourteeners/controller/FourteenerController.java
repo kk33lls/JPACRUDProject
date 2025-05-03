@@ -32,7 +32,7 @@ public class FourteenerController {
 	@GetMapping("deleteMt.do")
 	public String deleteMt(Fourteener deleteMt, Model model) {
 		dao.delete(deleteMt);
-		return "home";
+		return "redirect:home.do";
 	}
 	@PostMapping("createMt.do")
 	public String createMt(Fourteener newMt, Model model) {
@@ -46,8 +46,9 @@ public class FourteenerController {
 		return "update";
 	}
 	@PostMapping("updateMt.do")
-	public String updatedMt(int mtId, Fourteener updatedMt, Model model) {
-		dao.update(mtId, updatedMt);
+	public String updatedMt(Fourteener updatedMt, Model model) {
+		dao.update(updatedMt.getId(), updatedMt);
+		System.out.println(updatedMt);
 		return "addedResult";
 		
 	}

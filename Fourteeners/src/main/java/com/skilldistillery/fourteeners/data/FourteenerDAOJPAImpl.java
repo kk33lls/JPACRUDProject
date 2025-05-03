@@ -27,4 +27,27 @@ public class FourteenerDAOJPAImpl implements FourteenerDAO {
 		return em.createQuery(jpql, Fourteener.class).getResultList();
 	}
 
+	@Override
+	public void create(Fourteener newMt) {
+		em.persist(newMt);
+	}
+
+	@Override
+	public Fourteener update(int id, Fourteener updateMt) {
+		Fourteener managed = em.find(Fourteener.class, id);
+		managed.setName(updateMt.getName());
+		managed.setElevation(updateMt.getElevation());
+		managed.setElevationGain(updateMt.getElevationGain());
+		managed.setDistance(updateMt.getDistance());
+		managed.setRanking(updateMt.getRanking());
+		managed.setDuration(updateMt.getDuration());
+		return managed;
+	}
+
+	@Override
+	public void delete(Fourteener mtToDelete) {
+		Fourteener mountain = em.find(Fourteener.class, mtToDelete);
+		em.remove(mountain);
+	}
+
 }

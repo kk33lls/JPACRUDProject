@@ -28,4 +28,24 @@ public class FourteenerController {
 		model.addAttribute("mountain", found);
 		return "show";
 	}
+	@GetMapping("deleteMt.do")
+	public String deleteMt(@RequestParam("mtId") int mtId, Model model) {
+		Fourteener delete = new Fourteener();
+		delete.setId(mtId);
+		dao.delete(delete);
+		return "home";
+	}
+	@GetMapping("createMt.do")
+	public String createMt(@RequestParam("mtId") int mtId, Model model) {
+		Fourteener add = new Fourteener();
+		add.setId(mtId);
+		dao.create(add);
+		return "home";
+	}
+	@GetMapping("updateMt.do")
+	public String updateMt(@RequestParam("mtId") int mtId, Model model) {
+		Fourteener update = new Fourteener();
+		dao.update(mtId, update);
+		return "home";
+	}
 }

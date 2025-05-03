@@ -25,6 +25,15 @@
 					<li>Difficulty Ranking: ${mountain.ranking}</li>
 					<li>Total Duration: ${mountain.duration} <span>hours</span></li>
 				</ul>
+				<br>
+				<p>Do you wish to remove this mountain from the database?</p>
+				<form action="deleteMt.do" method="GET">
+					<input type="hidden" name="mtId" value="${mountain.id}"> <input
+						type="submit" value="Yes" name="Yes"></input> <input type="submit"
+						value="No" name="No"></input>
+				</form>
+				<br>
+				<br>
 			</c:when>
 			<c:otherwise>
 				<h2>Error: User input not found in the database</h2>

@@ -7,4 +7,8 @@ import com.skilldistillery.fourteeners.entities.Fourteener;
 public interface FourteenerDAO {
 	public Fourteener findById(int mtId);
 	public List<Fourteener> getList();
+	
+	 void create(Fourteener newMt);
+	 Fourteener update(int id, Fourteener updateMt);
+	 void delete(Fourteener mtToDelete);
 }

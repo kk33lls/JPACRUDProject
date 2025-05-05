@@ -52,4 +52,11 @@ public class FourteenerController {
 		return "addedResult";
 		
 	}
+	@GetMapping("keywordList.do")
+	public String findByKeyword(@RequestParam("name") String name, Model model) {
+		List<Fourteener> fourteenerListByKeyword = dao.findByKeyword(name);
+		model.addAttribute("list", fourteenerListByKeyword);
+		return "keywordList";
+		
+	}
 }

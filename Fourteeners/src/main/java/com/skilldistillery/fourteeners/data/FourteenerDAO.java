@@ -7,6 +7,7 @@ import com.skilldistillery.fourteeners.entities.Fourteener;
 public interface FourteenerDAO {
 	public Fourteener findById(int mtId);
 	public List<Fourteener> getList();
+	public List<Fourteener> findByKeyword(String name);
 	
 	 void create(Fourteener newMt);
 	 Fourteener update(int id, Fourteener updateMt);

@@ -23,7 +23,7 @@ public class FourteenerDAOJPAImpl implements FourteenerDAO {
 
 	@Override
 	public List<Fourteener> getList() {
-		String jpql = "SELECT f from Fourteener f";
+		String jpql = "SELECT f FROM Fourteener f";
 		return em.createQuery(jpql, Fourteener.class).getResultList();
 	}
 
@@ -48,6 +48,13 @@ public class FourteenerDAOJPAImpl implements FourteenerDAO {
 	public void delete(Fourteener mtToDelete) {
 		Fourteener mountain = em.find(Fourteener.class, mtToDelete.getId());
 		em.remove(mountain);
+	}
+
+	@Override
+	public List<Fourteener> findByKeyword(String name) {
+		String jpql = "SELECT f FROM Fourteener f WHERE lower(f.name) LIKE lower(:name)";
+
+		return em.createQuery(jpql, Fourteener.class).setParameter("name", name).getResultList();
 	}
 
 }

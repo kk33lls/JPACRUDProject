@@ -11,16 +11,23 @@
 	rel="stylesheet"
 	integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="stylingSheet.css">
 </head>
 <body>
 	<div>
 		<h1>Colorado's Fourteeners Database</h1>
-		<p>In mountaineering, a "Fourteener" is a term used to describe a
-			moutnain with an elevation of atleast 14,000 feet (4,267 meters)</p>
+		<p id ="intro">In mountaineering, a "Fourteener" is a term used to describe a
+			mountain with an elevation of atleast 14,000 feet (4,267 meters)</p>
 	</div>
 	<div>
 		<form action="getMountain.do" method="GET">
 			Search by number: <input type="text" name="mtId" /> <input
+				type="submit" value="Show Mountain" />
+		</form>
+	</div>
+	<div>
+		<form action="keywordList.do" method="GET">
+			Search by name: <input type="text" name="name" /> <input
 				type="submit" value="Show Mountain" />
 		</form>
 	</div>
@@ -37,9 +44,9 @@
 		<form action="createMt.do" method="POST">
 
 			<p>Name:
-			<input type="text" name="name" /></p>
+			<input type="text" name="name" placeholder="required" /></p>
 			<p>Elevation:
-			<input type="text" name="elevation"/></p>
+			<input type="text" name="elevation" placeholder="required"/></p>
 			<p>Elevation Gain:
 			<input type="text" name="elevationGain"/></p>
 			<p>Distance:

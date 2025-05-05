@@ -11,6 +11,7 @@
 	rel="stylesheet"
 	integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
 	crossorigin="anonymous">
+	<link rel="stylesheet" href="stylingSheet.css">
 </head>
 <body>
 	<a href="home.do">Back to Homepage</a>
@@ -26,18 +27,22 @@
 					<li>Total Duration: ${mountain.duration} <span>hours</span></li>
 				</ul>
 				<br>
+				<div class="showForm">
 				<p>Do you wish to remove this mountain from the database?</p>
 				<form action="deleteMt.do" method="GET">
 					<input type="hidden" name="id" value="${mountain.id}"> 
 				    <input type="submit" name="mtId" value="Delete">
 				 </form>
+				</div>
 				<br>
 				<br>
-				<p>Would you like to update the information?</p>
-				<form action="goToMtUpdate.do" method="GET">
-					<input type="hidden" name="mtId" value="${mountain.id}"> 
-					<input type="submit" value="Update" name="Update"></input>
-				</form>
+				<div class="showForm">
+					<p>Would you like to update the information?</p>
+					<form action="goToMtUpdate.do" method="GET">
+						<input type="hidden" name="mtId" value="${mountain.id}"> <input
+							type="submit" value="Update" name="Update"></input>
+					</form>
+				</div>
 			</c:when>
 			<c:otherwise>
 				<h2>Error: User input not found in the database</h2>

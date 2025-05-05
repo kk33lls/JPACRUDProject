@@ -40,7 +40,7 @@
 		</ol>
 	</div>
 	<div>
-		<h4>Add another mountain to the database</h4>
+		<h4 id="add">Add another mountain to the database</h4>
 		<form action="createMt.do" method="POST">
 
 			<p>Name:

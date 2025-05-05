@@ -1,55 +1,64 @@
 @charset "UTF-8";
-/* General reset and base styles */
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: Georgia, 'Times New Roman', serif;
-	background-color: #f4f4f2; /* soft off-white/earthy background */
-	color: #2e3b2c; /* dark forest green text */
+	background-color: #f4f4f2; 
+	color: #2e3b2c; 
 }
 
-/* Header */
 h1 {
 	text-align: center;
 	padding: 2rem 1rem;
-	background-color: #3e5c3a; /* forest green */
+	background-color: #3e5c3a; 
+	color: #fff;
+	font-size: 2rem;
+}
+
+#add {
+	text-align: center;
+	padding: 2rem 1rem;
+	background-color: #3e5c3a; 
 	color: #fff;
 	font-size: 2rem;
 }
 
 #intro {
 	text-align: center;
+	font-weight: bold;
 }
 
 .showForm {
 	max-width: 400px;
 	margin: 3rem auto;
-	background-color: #f1f3f0; /* very light sage */
+	background-color: #f1f3f0; 
 	padding: 2rem;
 	border-radius: 8px;
 	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 	text-align: center;
 	font-family: Georgia, 'Times New Roman', serif;
 }
+
 .showForm p {
-  color: #4f5d48;
-  margin-bottom: 2rem;
+	color: #4f5d48;
+	margin-bottom: 2rem;
 }
 
 /* Delete button */
 button.showForm {
-  background-color: #a84b3d; /* earthy rust red */
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+	background-color: #a84b3d;
+	color: white;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	border-radius: 4px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 button.showForm:hover {
-  background-color: #923f33; /* darker rust on hover */
+	background-color: #923f33; /* darker rust on hover */
 }
 
 /* Input forms */
@@ -72,7 +81,7 @@ input[type="text"], textarea {
 }
 
 button {
-	background-color: #6b8f71; /* muted earthy green */
+	background-color: #6b8f71; 
 	color: white;
 	border: none;
 	padding: 0.75rem 1.5rem;
@@ -83,20 +92,34 @@ button {
 }
 
 button:hover {
-	background-color: #587a5e; /* darker on hover */
+	background-color: #587a5e; 
 }
 
-/* Ordered List Styling */
+/* List Styling */
 ol {
 	max-width: 600px;
 	margin: 2rem auto;
 	padding: 1rem 2rem;
-	background-color: #d7e3d4; /* soft sage green */
+	background-color: #d7e3d4;
 	border-radius: 8px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 ol li {
+	margin: 0.5rem 0;
+	font-size: 1.1rem;
+}
+
+ul {
+	max-width: 600px;
+	margin: 2rem auto;
+	padding: 1rem 2rem;
+	background-color: #d7e3d4; 
+	border-radius: 8px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul li {
 	margin: 0.5rem 0;
 	font-size: 1.1rem;
 }
